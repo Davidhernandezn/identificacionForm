@@ -5,6 +5,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Website</th>
+        <th>Coordenadas </th>
         <th>Action</th>
       </tr>
     </thead>
@@ -14,6 +15,7 @@
         <td>{{ item.name }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.website }}</td>
+        <td>lat:&nbsp;{{ item.address.geo.lat}} <br> lng:&nbsp;{{ item.address.geo.lng}}</td>
         <td><i class="bi bi-pencil-fill icon-edit"></i> &nbsp;&nbsp; <i class="bi bi-trash-fill icon-trash"></i></td>
       </tr>
     </tbody>
