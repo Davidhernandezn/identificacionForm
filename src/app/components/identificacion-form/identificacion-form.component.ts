@@ -190,8 +190,20 @@ validarRFC(event: any) {
       },
     };
   console.log(datosAEnviar)
-  
-  
-  
-  }  
+
+
+    // Enviar los datos al servicio PersonasbinService
+    this.servicio.guardarP(datosAEnviar).subscribe(
+      (data: any) => {
+        console.log('Respuesta del servidor:', data);
+        // Aquí puedes manejar la respuesta del servidor, mostrar mensajes, etc.
+      },
+      (error) => {
+        console.error('Error al enviar los datos:', error);
+        // Aquí puedes manejar errores, mostrar mensajes de error, etc.
+      }
+    );
   }
+
+  }  
+  
