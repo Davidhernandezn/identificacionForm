@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f9fa;
+    margin: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  th {
+    color: #159688;  }
+
+  tr:hover {
+    background-color: #e9ecef;
+  }
+
+  .icon-trash{
+    color: #E91D62;
+  }
+
+  .icon-edit, .title-colums > th{
+    color: #159688;
+  }

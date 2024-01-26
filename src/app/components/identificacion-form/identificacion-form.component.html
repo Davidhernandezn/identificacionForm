@@ -1,0 +1,75 @@
+<form class="form-container">
+    <h1>Identificación</h1>
+
+    <div class="form-row">
+        <div class="form-group" [class.incompleto]="camposVacios.includes('nombre')">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" (input)="limitarCaracteres($event)"
+            [(ngModel)]="persona.nombre">
+          </div>
+    
+    <div class="form-group"  [class.incompleto]="camposVacios.includes('apellido1')">
+    <label for="apellido1">Primer Apellido:</label>
+    <input type="text" id="apellido1" name="apellido1" (input)="limitarCaracteres($event)"
+    [(ngModel)]="persona.apellido1"></div>
+
+    <div class="form-group" [class.incompleto]="!camposCompletos"  [class.incompleto]="camposVacios.includes('apellido2')">
+    <label for="apellido2">Segundo Apellido:</label>
+    <input type="text" id="apellido2" name="apellido2" (input)="limitarCaracteres($event)"
+    [(ngModel)]="persona.apellido2"></div>
+
+    <div class="form-group"  [class.incompleto]="camposVacios.includes('curp')">
+    <label for="curp">CURP:</label>
+    <input type="text" id="curp" name="curp" class="form-groupB" (input)="validarCurp($event)" maxlength="18"
+    [(ngModel)]="persona.curp">
+    <div *ngIf="curpInvalid" class="error-message">El CURP ingresado es inválido.</div>
+    </div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('rfc')">
+    <label for="rfc">RFC:</label>
+    <input type="text" id="rfc" name="rfc" (input)="validarRFC($event)" maxlength="13"
+    [(ngModel)]="persona.rfc">
+    <div *ngIf="rfcErrorMessage" class="error-message">{{ rfcErrorMessage }}</div>
+    </div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('codigoPostal')">
+        <label for="codigoPostal">Código Postal:</label>
+        <input type="number" id="codigoPostal" name="codigoPostal" (input)="validarInputNumbers($event)"
+        [(ngModel)]="persona.codigoPostal">
+        <div *ngIf="codigoPostalErrorMessage" class="error-message">{{ codigoPostalErrorMessage }}</div>
+      </div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('calle')">
+    <label for="calle">Calle:</label>
+    <input type="text" id="calle" name="calle"
+    [(ngModel)]="persona.calle"></div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('numExterior')">
+    <label for="numExterior">Número Exterior:</label>
+    <input type="number" id="numExterior" name="numExterior" (input)="validarInputNumbers($event)"
+    [(ngModel)]="persona.numExterior">
+<!--<div *ngIf="numExteriorErrorMessage" class="error-message">{{ numExteriorErrorMessage }}</div>-->
+</div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('numInterior')">
+    <label for="numInterior">Número Interior:</label>
+    <input type="text" id="numInterior" name="numInterior" maxlength="10"
+    [(ngModel)]="persona.numInterior"></div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('estado')">
+    <label for="estado">Estado:</label>
+    <input type="text" id="estado" name="estado" (input)="limitarCaracteres($event)"
+    [(ngModel)]="persona.estado"></div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('delegacion')">
+    <label for="delegacion">Delegación:</label>
+    <input type="text" id="delegacion" name="delegacion" (input)="limitarCaracteres($event)"
+    [(ngModel)]="persona.delegacion"></div>
+
+    <div class="form-group" [class.incompleto]="camposVacios.includes('colonia')">
+    <label for="colonia">Colonia:</label>
+    <input type="text" id="colonia" name="colonia" (input)="limitarCaracteres($event)"
+    [(ngModel)]="persona.colonia"></div>
+</div>
+    <button type="button" (click)="guardar()">Guardar</button>
+  </form>

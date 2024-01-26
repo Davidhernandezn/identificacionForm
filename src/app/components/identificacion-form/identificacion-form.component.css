@@ -1,0 +1,81 @@
+form {
+    /*max-width: 800px;  Ajusta el ancho máximo del formulario según tu preferencia */
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #3A4959;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Puedes cambiar esto según tu preferencia */
+}
+
+.form-group {
+    flex-basis: calc(33.33% - 16px); /* 3 elementos por fila (ajusta según tu preferencia) */
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.form-groupB {
+/*   flex-basis: calc(50% - 16px);
+    margin-bottom: 16px;
+    box-sizing: border-box;
+*/
+    width: 400px;
+}
+
+label {
+    color: #00A6A2;
+    margin-bottom: 8px;
+}
+
+input {
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #F5F8FA;
+    margin-bottom: 8px;
+}
+
+button {
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error-message {
+    color: red;
+    margin-top: 8px;
+  }
+
+
+  .form-group.incompleto > input{
+    border: 1.4px solid red;
+  }
+  
+  /* Agregamos un estilo específico para resaltar los campos vacíos */
+  .form-group.incompleto-vacio {
+    border-color: red;
+  }
